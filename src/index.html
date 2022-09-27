@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
-</head>
-<body>
-    <section id="todo-list-section">
-        <div id="todo-list-placeholder">
-            Todo list goes here.
+  </head>
+  <body>
+    <section id="tdl-section">
+      <div id="tdl-placeholder">
+        <!-- TDL Title -->
+        <div class="tdl-title__container">
+          <div class="tdl_title__left--item">Today's To Do</div>
+          <div class="tdl_title__right--item"><span class=reload>&#128257;</span></div>
         </div>
+        <!-- TDL Descriptions input -->
+        <div class="tdl-description-input__container">
+          <div class="tdl-description-input__left--item">
+            <input
+              class="tdl-description__input-field"
+              type="text"
+              name="description-input"
+              id="description-input"
+              placeholder="Add to your list..."
+            />
+          </div>
+
+          <div class="tdl-description-input__right--item">
+            <span>&#8629;</span></div>
+        </div>
+        <!-- TDL Descriptions -->
+        <div class="descriptions-container">
+        </div>
+        <!-- TDL Footer -->
+        <div class="tdl-footer">Clear all completed</div>
+      </div>
     </section>
-</body>
+  </body>
 </html>
