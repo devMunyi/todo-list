@@ -1,4 +1,5 @@
 import './style.css';
+import displayToDOList from '../modules/displayToDOList.js';
 
 const todoList = [
   {
@@ -21,26 +22,11 @@ const todoList = [
   {
     index: 4,
     description: 'Join standup meeting in the evening',
-    completed: true,
+    completed: false,
   },
 ];
 
-const dynamicList = todoList
-  .map(
-    (item) => `<div class="tdl-description__container" id="desc-${item.index}">
-      <div class="tdl-description__left--item">
-        <input type="checkbox" id="myCheck-${item.index}" ${
-  item.completed ? 'checked' : ''
-}/>
-        <label for="myCheck">${item.description}</label>
-      </div>
-      <div class="tdl-description__right--item right--item">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-      </div>
-    </div>`,
-  )
-  .join('');
-
-document.querySelector('.descriptions-container').innerHTML = dynamicList;
+document.addEventListener('DOMContentLoaded', () => {
+  // display list on page load
+  displayToDOList(todoList);
+});
