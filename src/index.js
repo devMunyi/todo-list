@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import './style.css';
 
 const todoList = [
@@ -28,12 +27,11 @@ const todoList = [
 
 const dynamicList = todoList
   .map(
-    (item) =>
-      `<div class="tdl-description__container" id="desc-${item.index}">
+    (item) => `<div class="tdl-description__container" id="desc-${item.index}">
       <div class="tdl-description__left--item">
         <input type="checkbox" id="myCheck-${item.index}" ${
-        item.completed ? `checked` : ''
-      }/>
+  item.completed ? 'checked' : ''
+}/>
         <label for="myCheck">${item.description}</label>
       </div>
       <div class="tdl-description__right--item right--item">
@@ -41,7 +39,7 @@ const dynamicList = todoList
         <div class="dot"></div>
         <div class="dot"></div>
       </div>
-    </div>`
+    </div>`,
   )
   .join('');
 

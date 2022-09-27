@@ -12,17 +12,19 @@ body {
 #tdl-placeholder {
   margin: 50px auto;
   width: 98%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
 
-@media  screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   #tdl-placeholder {
     width: 50%;
   }
 }
 
-.tdl-title__container, .tdl-description-input__container, .tdl-description__container  {
-  display:  flex;
+.tdl-title__container,
+.tdl-description-input__container,
+.tdl-description__container {
+  display: flex;
   justify-content: space-between;
   padding: 15px 15px;
   flex-wrap: wrap;
@@ -30,36 +32,29 @@ body {
 }
 
 .tdl-title__container {
-  padding-top: 18px
+  padding-top: 18px;
 }
 
 .tdl-footer {
-  display:  flex;
+  display: flex;
   justify-content: center;
   padding: 20px 10px;
   background-color: #e9e4e47a;
 }
 
 .tdl-description__left--item {
-  display:  flex;
+  display: flex;
   justify-items: center;
   gap: 0.8rem;
 }
 
 .tdl-description__input-field {
-  border:  none;
+  width: 100%;
+  border: none;
 }
 
 .tdl-description__input-field:focus {
   outline: none;
-}
-
-.tdl-description-input__left--item {
-  width: 75%;
-}
-
-.tdl-description__input-field {
-  width: 100%;
 }
 
 .tdl-description__input-field::placeholder {
@@ -67,7 +62,11 @@ body {
   font-size: 16px;
 }
 
-.tdl-description__right--item  {
+.tdl-description-input__left--item {
+  width: 75%;
+}
+
+.tdl-description__right--item {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,10 +80,6 @@ body {
   background-color: #1a19197a;
   border-radius: 50%;
   display: inline-block;
-}
-
-.reload {
-  font-family: Lucida Sans Unicode
 }
 
 .tdl-description-input__right--item {
