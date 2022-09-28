@@ -9,9 +9,6 @@ To Do List
 
 HTML, CSS & JS
 
-## [Live demo](https://devmunyi.github.io/Awesome-books-with-ES6/)
-
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
