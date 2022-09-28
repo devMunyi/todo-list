@@ -14,11 +14,10 @@ HTML, CSS & JS
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-    Github
+    Githut
+    Git
     HTML & CSS LINTERS
     CODE EDITOR
-    GITHUB
-    GIT
 
 ### Setup
     Create a repository.
