@@ -1,32 +1,58 @@
 import './style.css';
 import displayToDOList from '../modules/displayToDOList.js';
+import ToDoList from '../modules/ToDoList.js';
+import removeTask from '../modules/removeTask.js';
+import editTask from '../modules/editTask.js';
+import toggleTaskComplete from '../modules/toggleTaskComplete.js';
+import clearCompleted from '../modules/clearCompleted.js';
+import mouseOver from '../modules/mouseOver.js';
+import mouseOut from '../modules/mouseOut.js';
 
-const todoList = [
-  {
-    index: 1,
-    description: 'Solve 2 to 3 js coding challenges',
-    completed: false,
-  },
-  {
-    index: 2,
-    description: 'Fix 2 issues open on awesome books project',
-    completed: false,
-  },
-
-  {
-    index: 3,
-    description: 'Complete To Do list project',
-    completed: false,
-  },
-
-  {
-    index: 4,
-    description: 'Join standup meeting in the evening',
-    completed: false,
-  },
-];
-
+// load UI tasks list on page load
 document.addEventListener('DOMContentLoaded', () => {
+  // access the list of tasks
+  const tasksList = ToDoList.getTasksList();
   // display list on page load
-  displayToDOList(todoList);
+  displayToDOList(tasksList);
 });
+
+// get the form element
+const addTaskForm = document.getElementById('add-task-form');
+
+// listen to form submission
+addTaskForm.addEventListener('submit', (e) => {
+  // prevent form submission
+  e.preventDefault();
+
+  // get hidden Element
+  const taskInputHiddenElement = document.getElementById('task-edit-id');
+
+  // get the input element and value
+  const taskDescriptionInput = document.getElementById('description-input');
+
+  const taskIndex = ToDoList.getTaskIndex();
+  const taskDescriptionValue = taskDescriptionInput.value;
+  const todoList = new ToDoList(taskIndex, taskDescriptionValue);
+
+  // handle add edit based on id value on hidden input
+  const taskEditId = parseInt(taskInputHiddenElement.value, 10);
+  if (taskEditId > 0) {
+    ToDoList.editTask(taskEditId, taskDescriptionValue);
+  } else {
+    // add the task
+    ToDoList.addTask(todoList);
+  }
+
+  // clear the input field/set to default after submission
+  taskDescriptionInput.value = '';
+  taskInputHiddenElement.value = 0;
+});
+
+const clearCompletedBtn = document.querySelector('.clear-completed-btn');
+clearCompletedBtn.addEventListener('click', clearCompleted);
+
+window.removeTask = removeTask;
+window.editTask = editTask;
+window.toggleTaskComplete = toggleTaskComplete;
+window.mouseOver = mouseOver;
+window.mouseOut = mouseOut;

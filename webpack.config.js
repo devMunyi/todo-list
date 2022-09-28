@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
   },
+
   devServer: {
     static: './dist',
     hot: false, // optional, but you must not set both hot and liveReload to true
@@ -28,6 +29,9 @@ module.exports = {
     }),
   ],
 
+  // allow muliple entry into a single html page,
+  // but in this case i only hav one entry though at line 6
+  // so its here for future reference
   optimization: {
     runtimeChunk: 'single',
   },

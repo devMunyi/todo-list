@@ -11,10 +11,12 @@
         <!-- TDL Title -->
         <div class="tdl-title__container">
           <div class="tdl_title__left--item">Today's To Do</div>
-          <div class="tdl_title__right--item"><span class=reload>&#128257;</span></div>
+          <div class="tdl_title__right--item c-pointer right--item">
+            <span class="reload">&#128257;</span>
+          </div>
         </div>
         <!-- TDL Descriptions input -->
-        <div class="tdl-description-input__container">
+        <form id="add-task-form" class="tdl-description-input__container">
           <div class="tdl-description-input__left--item">
             <input
               class="tdl-description__input-field"
@@ -22,17 +24,18 @@
               name="description-input"
               id="description-input"
               placeholder="Add to your list..."
+              required
             />
+            <input type="hidden" id="task-edit-id" value="0">
           </div>
-
-          <div class="tdl-description-input__right--item">
-            <span>&#8629;</span></div>
-        </div>
+          <div class="right--item">
+            <button class="add-task-btn none-border-btn c-pointer" type="submit"><span>&#8629;</span></button>
+          </div>
+        </form>
         <!-- TDL Descriptions -->
-        <div class="descriptions-container">
-        </div>
+        <div class="descriptions-container"></div>
         <!-- TDL Footer -->
-        <div class="tdl-footer">Clear all completed</div>
+        <div class="tdl-footer"><button class="clear-completed-btn none-border-btn c-pointer" type="button">Clear all completed</button></div>
       </div>
     </section>
   </body>
