@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   displayToDOList(tasksList);
 });
 
+// get the input element and value
+const taskDescriptionInput = document.getElementById('description-input');
+
+taskDescriptionInput.addEventListener('change', () => {
+  taskDescriptionInput.focus(); // focus input field value change
+});
+
 // get the form element
 const addTaskForm = document.getElementById('add-task-form');
 
@@ -26,10 +33,6 @@ addTaskForm.addEventListener('submit', (e) => {
 
   // get hidden Element
   const taskInputHiddenElement = document.getElementById('task-edit-id');
-
-  // get the input element and value
-  const taskDescriptionInput = document.getElementById('description-input');
-
   const taskIndex = ToDoList.getTaskIndex();
   const taskDescriptionValue = taskDescriptionInput.value;
   const todoList = new ToDoList(taskIndex, taskDescriptionValue);
