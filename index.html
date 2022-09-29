@@ -1,47 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
-  <script defer src="/todo-list/runtime.js"></script><script defer src="/todo-list/main.js"></script></head>
-  <body>
-    <section id="tdl-section">
-      <div id="tdl-placeholder">
-        <!-- TDL Title -->
-        <div class="tdl-title__container">
-          <div class="tdl_title__left--item left--item">Today's To Do</div>
-          <div class="tdl_title__right--item c-pointer right--item">
-            <span class="reload"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-              <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-              <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-            </svg></span>
-          </div>
+<script defer src="runtime.js"></script><script defer src="main.js"></script></head>
+<body>
+    <section id="todo-list-section">
+        <div id="todo-list-placeholder">
+            Todo list goes here.
         </div>
-        <!-- TDL Descriptions input -->
-        <form id="add-task-form" class="tdl-description-input__container">
-          <div class="tdl-description-input__left--item left--item">
-            <input
-              class="tdl-description__input-field"
-              type="text"
-              name="description-input"
-              id="description-input"
-              placeholder="Add to your list..."
-              required
-            />
-            <input type="hidden" id="task-edit-id" value="0">
-          </div>
-          <div>
-            <button class="add-task-btn none-border-btn c-pointer right--item" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
-            </svg></button>
-          </div>
-        </form>
-        <!-- TDL Descriptions -->
-        <div class="descriptions-container"></div>
-        <!-- TDL Footer -->
-        <div class="tdl-footer"><button class="clear-completed-btn none-border-btn c-pointer" type="button">Clear all completed</button></div>
-      </div>
     </section>
-  </body>
+</body>
 </html>
