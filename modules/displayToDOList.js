@@ -10,9 +10,9 @@ export default function displayToDOList(todoList) {
       })" type="checkbox" id="myCheck-${item.index}" ${
         item.completed ? 'checked' : ''
       }/>
-      <label style="width: 75%" class="${
-        item.completed ? 'completed' : ''
-      }" for="myCheck">${item.description}</label>
+      <label class="${item.completed ? 'completed' : ''}" for="myCheck">${
+        item.description
+      }</label>
     </div>
     <div onmouseout="mouseOut(${item.index})" onmouseover="mouseOver(${
         item.index

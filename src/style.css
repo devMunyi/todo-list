@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +15,6 @@ body {
   color: #24292f;
   font-style: normal;
 }
-
 
 #tdl-placeholder {
   margin: 50px auto;
@@ -46,10 +44,7 @@ body {
 .descriptions-container {
   overflow-y: auto;
   height: 400px;
-}
-
-.tdl-description__container {
-  height: 25px;
+  width: 100%;
 }
 
 .tdl-title__container {
@@ -64,9 +59,9 @@ body {
 }
 
 .tdl-description__left--item {
-  display: flex;
-  justify-items: center;
-  gap: 0.8rem;
+   width: 75%;
+   display: flex;
+   gap: 1.5rem;
 }
 
 .tdl-description__input-field {
@@ -78,9 +73,8 @@ body {
 }
 
 .tdl-description__input-field:focus {
-  background-color:#e9e4e47a;
+  background-color: #e9e4e47a;
 }
-
 
 .tdl-description__input-field::placeholder {
   font-style: italic;
