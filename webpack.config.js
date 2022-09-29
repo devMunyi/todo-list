@@ -7,6 +7,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
+    // Tweak this to match your GitHub project name
+    publicPath: '/todo-list/',
   },
 
   devServer: {
