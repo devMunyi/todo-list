@@ -9,7 +9,7 @@ To Do List
 
 HTML, CSS & JS
 
-## [Live demo](https://devmunyi.github.io/Awesome-books-with-ES6/)
+## [Live demo](https://devmunyi.github.io/todo-list/)
 
 
 ## Getting Started
