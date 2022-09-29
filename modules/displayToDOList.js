@@ -1,6 +1,7 @@
 export default function displayToDOList(todoList) {
   const dynamicList = todoList
-    .map(
+      .reverse()
+      .map(
       (item) => `<div class="tdl-description__container" id="desc-${
         item.index
       }">
