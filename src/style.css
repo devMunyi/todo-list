@@ -59,9 +59,9 @@ body {
 }
 
 .tdl-description__left--item {
-   width: 75%;
-   display: flex;
-   gap: 1.5rem;
+  width: 75%;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .tdl-description__input-field {
@@ -162,4 +162,9 @@ body {
 
 .edit-delete-icons > span {
   padding: 2px;
+}
+
+.tdl-description__right--item {
+  width: 10%;
+  min-height: 25px;
 }
