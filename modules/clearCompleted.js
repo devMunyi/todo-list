@@ -4,7 +4,8 @@ import displayToDOList from './displayToDOList.js';
 const clearCompleted = () => {
   const tasks = ToDoList.getTasksList();
 
-  const incompleteTasks = tasks.filter(ToDoList.isInComplete);
+  // const incompleteTasks = tasks.filter(ToDoList.isInComplete);
+  const incompleteTasks = tasks.filter((task) => task.completed === false);
 
   // update tasks index
   const updatedList = ToDoList.updateTasksIndex(incompleteTasks);
