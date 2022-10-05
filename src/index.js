@@ -7,6 +7,8 @@ import toggleTaskComplete from '../modules/toggleTaskComplete.js';
 import clearCompleted from '../modules/clearCompleted.js';
 import mouseOver from '../modules/mouseOver.js';
 import mouseOut from '../modules/mouseOut.js';
+import addTask from '../modules/addTask.js';
+import persistTaskEditId from '../modules/persistTaskEditId.js';
 
 // load UI tasks list on page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,10 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // get the input element and value
 const taskDescriptionInput = document.getElementById('description-input');
 
-taskDescriptionInput.addEventListener('change', () => {
-  taskDescriptionInput.focus(); // focus input field value change
-});
-
 // get the form element
 const addTaskForm = document.getElementById('add-task-form');
 
@@ -34,16 +32,16 @@ addTaskForm.addEventListener('submit', (e) => {
   // get hidden Element
   const taskInputHiddenElement = document.getElementById('task-edit-id');
   const taskIndex = ToDoList.getTaskIndex();
-  const taskDescriptionValue = taskDescriptionInput.value;
-  const todoList = new ToDoList(taskIndex, taskDescriptionValue);
+  const taskDescriptionVal = taskDescriptionInput.value;
+  const todoList = new ToDoList(taskIndex, taskDescriptionVal);
 
   // handle add edit based on id value on hidden input
   const taskEditId = parseInt(taskInputHiddenElement.value, 10);
   if (taskEditId > 0) {
-    ToDoList.editTask(taskEditId, taskDescriptionValue);
+    editTask(taskEditId, taskDescriptionVal);
   } else {
     // add the task
-    ToDoList.addTask(todoList);
+    addTask(todoList);
   }
 
   // clear the input field/set to default after submission
@@ -55,7 +53,7 @@ const clearCompletedBtn = document.querySelector('.clear-completed-btn');
 clearCompletedBtn.addEventListener('click', clearCompleted);
 
 window.removeTask = removeTask;
-window.editTask = editTask;
 window.toggleTaskComplete = toggleTaskComplete;
 window.mouseOver = mouseOver;
 window.mouseOut = mouseOut;
+window.persistTaskEditId = persistTaskEditId;

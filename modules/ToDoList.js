@@ -8,39 +8,6 @@ export default class ToDoList {
     this.completed = completed;
   }
 
-  // add a new task
-  static addTask(newTask) {
-    // available tasks
-    const tasks = ToDoList.getTasksList();
-    // add a task
-    tasks.push(newTask);
-    // persist updated tasks
-    ToDoList.persistToLocalstorage(tasks);
-  }
-
-  static editTask(index, newDescription) {
-    // available tasks
-    const tasks = ToDoList.getTasksList();
-
-    // const updatedTasks = tasks.array.forEach(element, elementIndex, arr => {
-    //   if(elem)
-    // });
-
-    const tasksCount = ToDoList.getTasksCount();
-    for (let i = 0; i < tasksCount; i += 1) {
-      if (tasks[i].index === index) {
-        tasks[i].description = newDescription;
-        break;
-      }
-    }
-
-    // update local storage
-    ToDoList.persistToLocalstorage(tasks);
-
-    // update UI list
-    displayToDOList(tasks);
-  }
-
   // evaluate newly added task index
   static getTaskIndex() {
     let tasksTotal = ToDoList.getTasksCount();
@@ -75,13 +42,5 @@ export default class ToDoList {
 
     // re-render list UI
     displayToDOList(ToDoList.getTasksList());
-  }
-
-  // check if task is not complete
-  static isInComplete(task) {
-    if (task.completed) {
-      return false;
-    }
-    return true;
   }
 }
