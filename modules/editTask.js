@@ -1,23 +1,24 @@
 import ToDoList from './ToDoList.js';
+import displayToDOList from './displayToDOList.js';
 
-const editTask = (index) => {
-  // get the input element and value
-  const taskInputHiddenElement = document.getElementById('task-edit-id');
-  const taskDescriptionInput = document.getElementById('description-input');
+const editTask = (index, newDescription) => {
+  // available tasks
   const tasks = ToDoList.getTasksList();
 
-  let taskEditDesc = '';
-
   const tasksCount = ToDoList.getTasksCount();
+
   for (let i = 0; i < tasksCount; i += 1) {
     if (tasks[i].index === index) {
-      taskEditDesc = tasks[i].description;
-      taskInputHiddenElement.value = index;
-      break; // exit the loop
+      tasks[i].description = newDescription;
+      break;
     }
   }
-  // populate description input field
-  taskDescriptionInput.value = taskEditDesc;
+
+  // update local storage
+  ToDoList.persistToLocalstorage(tasks);
+
+  // update UI list
+  displayToDOList(tasks);
 };
 
 export default editTask;
