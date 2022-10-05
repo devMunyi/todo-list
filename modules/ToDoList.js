@@ -22,6 +22,10 @@ export default class ToDoList {
     // available tasks
     const tasks = ToDoList.getTasksList();
 
+    // const updatedTasks = tasks.array.forEach(element, elementIndex, arr => {
+    //   if(elem)
+    // });
+
     const tasksCount = ToDoList.getTasksCount();
     for (let i = 0; i < tasksCount; i += 1) {
       if (tasks[i].index === index) {
