@@ -1,7 +1,7 @@
 import addTask from './modules/addTask.js';
 import removeTask from './modules/removeTask.js';
 
-describe('Add and Remove task', () => {
+describe('Task 1', () => {
   test('test add task function ', () => {
     document.body.innerHTML = '<div class="descriptions-container"></div>';
     addTask({
@@ -10,7 +10,7 @@ describe('Add and Remove task', () => {
       completed: false,
     });
     const list = document.querySelectorAll(
-      '.descriptions-container .tdl-description__container',
+      '.descriptions-container .tdl-description__container'
     );
     expect(list).toHaveLength(1);
   });
@@ -25,7 +25,7 @@ describe('Add and Remove task', () => {
     required
   />`;
     removeTask(1);
-    const taskElement = document.querySelector('desc-1');
+    const taskElement = document.querySelector('#desc-1');
     expect(taskElement).toBeNull();
   });
 });
