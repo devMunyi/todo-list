@@ -10,7 +10,7 @@ describe('Task 1', () => {
       completed: false,
     });
     const list = document.querySelectorAll(
-      '.descriptions-container .tdl-description__container'
+      '.descriptions-container .tdl-description__container',
     );
     expect(list).toHaveLength(1);
   });
