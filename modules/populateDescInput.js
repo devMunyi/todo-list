@@ -1,4 +1,4 @@
-import ToDoList from './ToDoList';
+import ToDoList from './ToDoList.js';
 
 const populateDescInput = (index) => {
   // get the input element and value
@@ -18,8 +18,6 @@ const populateDescInput = (index) => {
   }
   // populate description input field
   taskDescriptionInput.value = taskEditDesc;
-
-  console.log('I wa called');
 };
 
 export default populateDescInput;

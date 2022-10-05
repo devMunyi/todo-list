@@ -1,17 +1,16 @@
-// require add task function
-import addTask from './modules/addTask';
-import removeTask from './modules/removeTask';
+import addTask from './modules/addTask.js';
+import removeTask from './modules/removeTask.js';
 
 describe('Task 1', () => {
   test('test add task function ', () => {
-    document.body.innerHTML = `<div class="descriptions-container"></div>`;
+    document.body.innerHTML = '<div class="descriptions-container"></div>';
     addTask({
       index: 1,
       description: 'test if this task is added to the dom list',
       completed: false,
     });
     const list = document.querySelectorAll(
-      '.descriptions-container .tdl-description__container'
+      '.descriptions-container .tdl-description__container',
     );
     expect(list).toHaveLength(1);
   });

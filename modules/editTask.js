@@ -3,7 +3,7 @@ import displayToDOList from './displayToDOList.js';
 
 const editTask = (index, newDescription) => {
   // available tasks
-  let tasks = ToDoList.getTasksList();
+  const tasks = ToDoList.getTasksList();
 
   const tasksCount = ToDoList.getTasksCount();
 

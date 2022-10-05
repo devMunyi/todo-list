@@ -1,4 +1,4 @@
-import populateDescInput from './populateDescInput';
+import populateDescInput from './populateDescInput.js';
 
 const persistTaskEditId = (taskId) => {
   const taskInputHiddenElement = document.getElementById('task-edit-id');
