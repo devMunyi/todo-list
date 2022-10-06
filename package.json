@@ -40,6 +40,7 @@
     "webpack-dev-middleware": "^5.3.3",
     "webpack-dev-server": "^4.11.1"
   },
+  
   "dependencies": {
     "bootstrap-icons": "^1.9.1",
     "gh-pages": "^4.0.0",

@@ -1,9 +1,13 @@
 import ToDoList from './ToDoList.js';
 import displayToDOList from './displayToDOList.js';
 
-const clearCompleted = () => {
-  const tasks = ToDoList.getTasksList();
-
+const clearCompleted = (list = '') => {
+  let tasks = null;
+  if (list.length) {
+    tasks = list;
+  } else {
+    tasks = ToDoList.getTasksList();
+  }
   // const incompleteTasks = tasks.filter(ToDoList.isInComplete);
   const incompleteTasks = tasks.filter((task) => task.completed === false);
 
@@ -18,6 +22,8 @@ const clearCompleted = () => {
 
   // ensure the input field is empty
   document.getElementById('description-input').value = '';
+
+  return updatedList;
 };
 
 export default clearCompleted;
