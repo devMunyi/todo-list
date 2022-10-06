@@ -29,4 +29,22 @@ describe('part two of todo list testing', () => {
 
     expect(tasks[1].description).toBe(newDesc);
   });
+  test('test function to update completed status ', () => {
+    document.body.innerHTML = '<div class="descriptions-container"></div>';
+    tasks[1].completed = true;
+    toggleTaskComplete(1, tasks);
+    expect(tasks[1].completed).toBeTruthy();
+  });
+  test('test clearCompleted function ', () => {
+    document.body.innerHTML = `<div class="descriptions-container"></div><input
+    class="tdl-description__input-field"
+    type="text"
+    name="description-input"
+    id="description-input"
+    placeholder="Add to your list..."
+    required
+  />`;
+    const updatedList = clearCompleted();
+    expect(updatedList.length).toBe(1);
+  });
 });
