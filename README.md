@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # To Do List
 
  This Projects involves building a clone of [minimalist](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/) ToDo List.
